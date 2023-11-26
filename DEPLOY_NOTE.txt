@@ -1,4 +1,36 @@
+Purpose: Deploy Shiba Classic L2 with id 66886687 of Sepolia testnet on Ubuntu PC 20.04 or 22.04 (at least 4cpu, 8gb ram, 1TB storage)
+Please refer to https://stack.optimism.io/docs/build/getting-started/#
 
+A. Prepare
+1. Testnet will be L2 of Sepolia Ethereum, so please get some ETH on Sepolia at https://faucet.quicknode.com/ethereum/sepolia & https://www.infura.io/faucet/sepolia
+
+2. Prepare 4 addresses: Admin, Batcher, Proposer, Sequencer ( Using Metamask, address & private key)
+Admin — 0.2 ETH
+Proposer — 0.2 ETH
+Batcher — 0.1 ETH
+WARNING: Batcher & proposer will write to L1 every 5 minutes, so you have to prepare enough eth for mainnet
+
+3. Pull source code
++ You must allocate source code at home folder, go to home using command "cd ~"
++ git@github.com:bvluke/optimism-for-shibc.git and then rename folder to "optimism" (for using commands easily)
++ git@github.com:bvluke/op-geth.git
++ git@github.com:bvluke/blockscout-for-shibc.git
+
+4. Go to "optimism" and put addresses infomation to "optimism/.envrc.example", and rename to ".envrc"
+
+5. Install all dependencies library & build code modules refer to https://stack.optimism.io/docs/build/getting-started/# , from the beginning to section "Load Environment variables
+"
+
+6. Plz check all dependencies by
+cd ~/optimism
+cd packages/contracts-bedrock
+./scripts/shiba-classic-testnet/versions.sh
+
+6. After all, plz refer to bellow sections to start the network
+
+
+***********************************************************************
+B. Start network
 1. Configure Network
 
 cd ~/optimism
@@ -43,7 +75,7 @@ mkdir datadir
 build/bin/geth init --datadir=datadir genesis.json
 
 -------------------------------------
-5. Start op-geth
+5. Start op-geth (in new command window)
 
 cd ~/op-geth
 
@@ -71,7 +103,7 @@ cd ~/op-geth
     --rollup.disabletxpoolgossip=true
 
 --------------------------------------
-6. Start op-node
+6. Start op-node (in new command window)
 
 cd ~/optimism/op-node
 
@@ -91,7 +123,7 @@ cd ~/optimism/op-node
 	--l1.rpckind=$L1_RPC_KIND
 
 ----------------------------------
-7. Start op-batcher
+7. Start op-batcher (in new command window)
 
 cd ~/optimism/op-batcher
 
@@ -111,7 +143,7 @@ cd ~/optimism/op-batcher
     --private-key=$GS_BATCHER_PRIVATE_KEY
 
 ------------------------------------------
-9. Start op-proposer
+9. Start op-proposer (in new command window)
 
 cd ~/optimism/op-proposer
 
@@ -122,3 +154,12 @@ cd ~/optimism/op-proposer
     --l2oo-address=$(cat ../packages/contracts-bedrock/deployments/shiba-classic-testnet/L2OutputOracleProxy.json | jq -r .address) \
     --private-key=$GS_PROPOSER_PRIVATE_KEY \
     --l1-eth-rpc=$L1_RPC_URL
+
+
+10. Now you have a network with RPC at http://localhost:8545, id 66886687
+
+************************************************************************************************************
+C. BLOCKSCOUT
+
+Please using blockscout downloaded above and refer to https://stack.optimism.io/docs/build/explorer/#installation-and-configuration
+
