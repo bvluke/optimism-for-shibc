@@ -16,8 +16,8 @@ importers:
         version: 0.1.12(typescript@5.2.2)
     devDependencies:
       '@babel/eslint-parser':
-        specifier: ^7.18.2
-        version: 7.22.15(@babel/core@7.22.10)(eslint@8.53.0)
+        specifier: ^7.23.9
+        version: 7.23.9(@babel/core@7.22.10)(eslint@8.53.0)
       '@changesets/changelog-github':
         specifier: ^0.4.8
         version: 0.4.8
@@ -134,8 +134,6 @@ importers:
       vitest:
         specifier: ^0.34.4
         version: 0.34.4
-
-  op-exporter: {}
 
   packages/chain-mon:
     dependencies:
@@ -638,8 +636,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser@7.22.15(@babel/core@7.22.10)(eslint@8.53.0):
-    resolution: {integrity: sha512-yc8OOBIQk1EcRrpizuARSQS0TWAcOMpEJ1aafhNznaeYkeL+OhqnDObGFylB8ka8VFF/sZc+S4RzHyO+3LjQxg==}
+  /@babel/eslint-parser@7.23.9(@babel/core@7.22.10)(eslint@8.53.0):
+    resolution: {integrity: sha512-xPndlO7qxiJbn0ATvfXQBjCS7qApc9xmKHArgI/FTEFxXas5dnjC/VqM37lfZun9dclRYcn+YQAr6uDFy0bB2g==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
