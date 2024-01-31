@@ -16,8 +16,8 @@ importers:
         version: 0.1.12(typescript@5.2.2)
     devDependencies:
       '@babel/eslint-parser':
-        specifier: ^7.18.2
-        version: 7.22.15(@babel/core@7.22.10)(eslint@8.53.0)
+        specifier: ^7.23.10
+        version: 7.23.10(@babel/core@7.22.10)(eslint@8.53.0)
       '@changesets/changelog-github':
         specifier: ^0.4.8
         version: 0.4.8
@@ -134,8 +134,6 @@ importers:
       vitest:
         specifier: ^0.34.4
         version: 0.34.4
-
-  op-exporter: {}
 
   packages/chain-mon:
     dependencies:
@@ -638,8 +636,8 @@ packages:
       - supports-color
     dev: true
 
-  /@babel/eslint-parser@7.22.15(@babel/core@7.22.10)(eslint@8.53.0):
-    resolution: {integrity: sha512-yc8OOBIQk1EcRrpizuARSQS0TWAcOMpEJ1aafhNznaeYkeL+OhqnDObGFylB8ka8VFF/sZc+S4RzHyO+3LjQxg==}
+  /@babel/eslint-parser@7.23.10(@babel/core@7.22.10)(eslint@8.53.0):
+    resolution: {integrity: sha512-3wSYDPZVnhseRnxRJH6ZVTNknBz76AEnyC+AYYhasjP3Yy23qz0ERR7Fcd2SHmYuSFJ2kY9gaaDd3vyqU09eSw==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
@@ -8024,6 +8022,7 @@ packages:
       is-hex-prefixed: 1.0.0
       strip-hex-prefix: 1.0.0
     dev: true
+    bundledDependencies: false
 
   /event-target-shim@5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
